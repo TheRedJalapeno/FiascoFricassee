@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .slide-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+            gap: 10px;
+        }
+        .controls button {
+            padding: 8px 15px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .controls button:hover {
+            background-color: #005fa3;
+        }
+        .slide {
+            display: none;
+            padding: 40px;
+            background-color: white;
+            min-height: 500px;
+        }
+        .slide.active {
+            display: block;
+        }
+        .slide:not(.active) {
+            display: none;
+        }
+        .title-slide {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom right, #003366, #006699);
+            color: white;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #003366;
+        }
+        .title-slide h1 {
+            font-size: 44px;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .title-slide h2 {
+            font-size: 28px;
+            color: #f0f0f0;
+            font-weight: normal;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 28px;
+            color: #0077cc;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .two-column {
+            display: flex;
+            gap: 40px;
+        }
+        .column {
+            flex: 1;
+        }
+        .highlight-box {
+            background-color: #f2f7ff;
+            border-left: 4px solid #0077cc;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+        .goal {
+            background-color: #e3f2fd;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-good {
+            background-color: #4caf50;
+        }
+        .status-planned {
+            background-color: #ff9800;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide active">
+            <h1>Florida Tech Bisk College of Business</h1>
+            <h2>Strategic Marketing Plan</h2>
+            <p>Marketing Committee Advisory Board</p>
+            <div class="page-number">1</div>
+        </div>
+
+        <!-- Slide 2: Goals & Strategic Tie-ins -->
+        <div class="slide">
+            <h2>Strategic Plan Tie-ins</h2>
+            <div class="highlight-box">
+                <p>The marketing strategy directly supports key institutional goals:</p>
+            </div>
+            <div class="goal">
+                <h3>Goal 1: Improve the prominence and ranking of Florida Tech CoB</h3>
+            </div>
+            <div class="goal">
+                <h3>Goal 2: Drive more and higher quality applicants</h3>
+                <p>(Direct result from achieving Goal 1)</p>
+            </div>
+            <div class="goal">
+                <h3>Goal 5: Marketing</h3>
+                <ul>
+                    <li>Implement targeted marketing campaigns</li>
+                    <li>Create a comprehensive newsletter</li>
+                    <li>Establish a Center for Accounting and Finance</li>
+                </ul>
+            </div>
+            <div class="page-number">2</div>
+        </div>
+
+        <!-- Slide 3: Brand Marketing -->
+        <div class="slide">
+            <h2>Brand Marketing</h2>
+            <div class="highlight-box">
+                <p><span class="status-indicator status-good"></span> Current Status: <strong>Great</strong></p>
+            </div>
+            <h3>Key Initiatives:</h3>
+            <ul>
+                <li><strong>Increase social media presence:</strong> Scale from 1× to 3× daily posts through "Pete the Panther" persona
+                    <ul>
+                        <li>Content focus: Student activities, academic events, awards, capstone projects, sports</li>
+                        <li>Prioritize engagement based on platform popularity</li>
+                    </ul>
+                </li>
+                <li><strong>Establish hashtag campaigns:</strong> Create and promote #FLTech hashtags
+                    <ul>
+                        <li>Place promotional placards around campus during events</li>
+                        <li>Encourage students to post their own photos and videos</li>
+                    </ul>
+                </li>
+                <li><strong>Florida Tech Newsletter Blog:</strong>
+                    <ul>
+                        <li>Ensure all newsletters remain permanently accessible on the website</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="page-number">3</div>
+        </div>
+
+        <!-- Slide 4: Performance Marketing -->
+        <div class="slide">
+            <h2>Performance Marketing</h2>
+            <h3>Data-Driven Approach:</h3>
+            <ul>
+                <li><strong>Dedicated performance marketers for each college</strong>
+                    <ul>
+                        <li>Target market specifically to students of each field</li>
+                        <li>Business for business students, Engineering for engineers, etc.</li>
+                    </ul>
+                </li>
+                <li><strong>Performance marketing as distinct from brand marketing</strong>
+                    <ul>
+                        <li>Primarily a data analyst role focused on KPI optimization</li>
+                        <li>Zero overlap with brand marketing functions</li>
+                    </ul>
+                </li>
+                <li><strong>Governance process</strong>
+                    <ul>
+                        <li>All campaigns require approval from Brand and Legal before launch</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="highlight-box">
+                <p>Performance marketing focuses on measurable results and conversion metrics, while brand marketing builds awareness and reputation.</p>
+            </div>
+            <div class="page-number">4</div>
+        </div>
+
+        <!-- Slide 5: Student Government Liaison -->
+        <div class="slide">
+            <h2>Student Government Liaison</h2>
+            <h3>Driving Optimism on Campus:</h3>
+            <div class="two-column">
+                <div class="column">
+                    <ul>
+                        <li><strong>Open two-way dialogue</strong> between:
+                            <ul>
+                                <li>Students</li>
+                                <li>Student Government</li>
+                                <li>University Leadership</li>
+                            </ul>
+                        </li>
+                        <li><strong>Identify issues and publicly resolve them</strong>
+                            <ul>
+                                <li>Create forums for student feedback</li>
+                                <li>Showcase actions taken based on student input</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="highlight-box">
+                        <h3>Strategic Approach</h3>
+                        <p>"People like to complain, so let's give them space to action their good ideas"</p>
+                        <p>Transform complaints into constructive improvements and positive stories</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-number">5</div>
+        </div>
+
+        <!-- Slide 6: PR Team (Long Term) -->
+        <div class="slide">
+            <h2>Public Relations Team</h2>
+            <h3>Longer Term Activities:</h3>
+            <ul>
+                <li><strong>Regular press releases:</strong> Minimum twice yearly
+                    <ul>
+                        <li>Faculty publications and research</li>
+                        <li>Student showcases and events</li>
+                        <li>International programs, study abroad opportunities</li>
+                    </ul>
+                </li>
+                <li><strong>Medium.com Contributions:</strong>
+                    <ul>
+                        <li>Publish newsletter content on major platforms</li>
+                        <li>Include links back to fit.edu for traffic generation</li>
+                    </ul>
+                </li>
+                <li><strong>Research Portal:</strong>
+                    <ul>
+                        <li>Blog-style repository of Florida Tech published research</li>
+                        <li>Include links to journal articles</li>
+                    </ul>
+                </li>
+                <li><strong>Google News AMP integration:</strong>
+                    <ul>
+                        <li>Optimize posts for ranking on Google News</li>
+                    </ul>
+                </li>
+                <li><strong>Alumni Evangelism:</strong>
+                    <ul>
+                        <li>Champion graduates to enhance public perception</li>
+                        <li>Position Florida Tech as an educational leader</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="page-number">6</div>
+        </div>
+
+        <!-- Slide 7: Corporate Engagement -->
+        <div class="slide">
+            <h2>Corporate Engagement</h2>
+            <h3>Building Business Relationships:</h3>
+            <div class="two-column">
+                <div class="column">
+                    <h4>Executive Outreach</h4>
+                    <ul>
+                        <li><strong>Invite corporate senior leaders (Director+) to student showcases</strong>
+                            <ul>
+                                <li>Connect star students with local leaders</li>
+                                <li>Position Florida Tech as talent pipeline</li>
+                            </ul>
+                        </li>
+                        <li><strong>Engage local CXOs and government leaders</strong>
+                            <ul>
+                                <li>Host executive panels and symposiums</li>
+                                <li>Build relationships through VIP events</li>
+                                <li>Publicly recognize their participation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="highlight-box">
+                        <h4>Benefits</h4>
+                        <ul>
+                            <li>Enhanced university reputation</li>
+                            <li>Expanded job opportunities for students</li>
+                            <li>Potential for increased donor engagement</li>
+                            <li>Research partnerships and funding</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="page-number">7</div>
+        </div>
+
+        <!-- Slide 8: Additional Strategic Initiatives -->
+        <div class="slide">
+            <h2>Additional Strategic Initiatives</h2>
+            <ul>
+                <li><strong>College Ranking Specialist:</strong>
+                    <ul>
+                        <li>Reports directly to Dr. Nicklow</li>
+                        <li>Provides steering plans for all Deans</li>
+                        <li>Target: Improve university ranking to top 100</li>
+                    </ul>
+                </li>
+                <li><strong>Career Services Transformation:</strong>
+                    <ul>
+                        <li>Evolve from traditional model to recruiting agency approach</li>
+                        <li>Partner with major brands to fill staffing gaps</li>
+                        <li>Generate revenue through placement fees</li>
+                        <li>Focus on positions paying $70-150K</li>
+                    </ul>
+                </li>
+                <li><strong>New Course Development:</strong>
+                    <ul>
+                        <li>Research fundamentals for freshmen and MBA students</li>
+                        <li>Focus on source credibility, citation tracking, data analysis</li>
+                    </ul>
+                </li>
+                <li><strong>Future Internship Program (2028+):</strong>
+                    <ul>
+                        <li>Mandatory internship requirement for undergraduate graduation</li>
+                        <li>Model after RIT's successful program</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="page-number">8</div>
+        </div>
+
+        <!-- Slide 9: Implementation Timeline -->
+        <div class="slide">
+            <h2>Implementation Timeline</h2>
+            <div class="highlight-box">
+                <p>A phased approach to ensure successful execution and measurable results</p>
+            </div>
+            <div class="two-column">
+                <div class="column">
+                    <h3>Immediate Priorities (0-6 months)</h3>
+                    <ul>
+                        <li>Increase social media posting frequency</li>
+                        <li>Establish hashtag campaigns</li>
+                        <li>Launch newsletter blog</li>
+                        <li>Begin Student Government liaison activities</li>
+                    </ul>
+
+                    <h3>Short-Term Goals (6-12 months)</h3>
+                    <ul>
+                        <li>Implement performance marketing by college</li>
+                        <li>Initiate first press releases</li>
+                        <li>Begin corporate executive invitations</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Mid-Term Goals (1-2 years)</h3>
+                    <ul>
+                        <li>Launch research portal</li>
+                        <li>Implement Google News AMP integration</li>
+                        <li>Establish Medium.com presence</li>
+                        <li>Begin alumni evangelism program</li>
+                    </ul>
+
+                    <h3>Long-Term Vision (2+ years)</h3>
+                    <ul>
+                        <li>Career services transformation</li>
+                        <li>New course development</li>
+                        <li>Advance toward top 100 ranking</li>
+                        <li>Develop mandatory internship program (by 2028)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page-number">9</div>
+        </div>
+
+        <!-- Slide 10: Success Metrics -->
+        <div class="slide">
+            <h2>Success Metrics</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>Quantitative Measures</h3>
+                    <ul>
+                        <li><strong>Enrollment:</strong> Application volume, yield rates, student quality</li>
+                        <li><strong>Social Media:</strong> Engagement rates, follower growth, hashtag usage</li>
+                        <li><strong>Content:</strong> Newsletter readership, research portal traffic</li>
+                        <li><strong>Press:</strong> Media mentions, article placements</li>
+                        <li><strong>Ranking:</strong> Year-over-year improvement in key rankings</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Qualitative Measures</h3>
+                    <ul>
+                        <li><strong>Reputation:</strong> Stakeholder perception surveys</li>
+                        <li><strong>Student Satisfaction:</strong> Regular feedback mechanisms</li>
+                        <li><strong>Corporate Relations:</strong> Executive participation rates</li>
+                        <li><strong>Faculty Engagement:</strong> Contribution to marketing initiatives</li>
+                        <li><strong>Alumni:</strong> Testimonials and advocacy measurements</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <p>Regular reporting cycles will track progress against these metrics with quarterly reviews and annual comprehensive assessment</p>
+            </div>
+            <div class="page-number">10</div>
+        </div>
+
+        <!-- Slide 11: Next Steps -->
+        <div class="slide">
+            <h2>Next Steps & Discussion</h2>
+            <div class="highlight-box">
+                <h3>Key Questions for the Marketing Committee</h3>
+            </div>
+            <ol>
+                <li>What are our highest priority initiatives for immediate implementation?</li>
+                <li>How do we best structure the marketing leadership to execute this plan?</li>
+                <li>What additional resources will be required?</li>
+                <li>How do we align this marketing strategy with other university initiatives?</li>
+                <li>What potential challenges should we anticipate?</li>
+            </ol>
+            <div style="margin-top: 40px; text-align: center;">
+                <h3>Thank You</h3>
+                <p>Florida Tech Bisk College of Business<br>Marketing Committee</p>
+            </div>
+            <div class="page-number">11</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="prev-btn">Previous</button>
+        <button id="next-btn">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            navigateSlides(-1);
+        });
+        
+        document.getElementById('next-btn').addEventListener('click', () => {
+            navigateSlides(1);
+        });
+        
+        function navigateSlides(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        // Handle keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                navigateSlides(1);
+            } else if (e.key === 'ArrowLeft') {
+                navigateSlides(-1);
+            }
+        });
+    </script>
+</body>
+</html>
